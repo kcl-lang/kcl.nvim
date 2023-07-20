@@ -1,0 +1,1 @@
+autocmd BufNewFile,BufRead *.k setlocal filetype=kcl
