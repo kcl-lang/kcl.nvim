@@ -24,7 +24,8 @@ hi def link     kclImport     Include
 syn match       kclStringMatch       /"\([^"]\|\\\"\)\+"\ze[[:blank:]\r\n]*[,}\]]/ contains=kclString
 syn region      kclString           start=+\z(["']\)+  skip=+\\\%(\z1\|$\)+  end=+\z1+ end=+$+ 
 
-hi def link     kclString           String
+hi def link     kclStringMatch         String
+hi def link     kclString              String
 
 " Keyword
 syn keyword     kclConditional            if else elif                         
@@ -76,4 +77,3 @@ let b:current_syntax = "kcl"
 if main_syntax == 'kcl'
   unlet main_syntax
 endif
-
