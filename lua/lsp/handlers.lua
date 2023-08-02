@@ -4,7 +4,7 @@ local M = {}
 M.setup = function()
   -- replace the lsp info symbol
   local signs = {
-    { name = "DiagnosticSignError", text = "" },
+    { name = "DiagnosticSignError", text = "E" },
     { name = "DiagnosticSignWarn", text = "W" },
     { name = "DiagnosticSignHint", text = "H" },
     { name = "DiagnosticSignInfo", text = "I" },
@@ -14,10 +14,23 @@ M.setup = function()
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
   end
 
+  local function format(diagnostic)
+    if diagnostic.severity == vim.diagnostic.severity.ERROR then
+      return string.format("Error: %s", diagnostic.message)
+    elseif diagnostic.severity == vim.diagnostic.severity.WARN then
+      return string.format("WARN: %s", diagnostic.message)
+    end
+    return diagnostic.message
+  end
+
   -- set the style of lsp info
   local config = {
     -- the message show after the current line.
-    virtual_text = true,
+    virtual_text = {
+      format = format,
+      spacing = 4,
+      prefix = ''
+    },
     -- show signs
     signs = {
       active = signs,

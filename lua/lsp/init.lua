@@ -5,10 +5,9 @@ function check_start_kcl_lsp()
   local kcl_lsp_config = {
     name = 'kcl-cli',
     cmd = {'kcl-language-server'},
-    filetypes = { 'k' },
-    capabilities = capabilities
+    filetypes = { 'k' }
   }
-  local client_id = vim.lsp.start_client(kcl_lsp_config)
+  local client_id = vim.lsp.start(kcl_lsp_config)
   local bufnr = vim.api.nvim_get_current_buf()
   vim.lsp.buf_attach_client(bufnr, client_id)
 end
