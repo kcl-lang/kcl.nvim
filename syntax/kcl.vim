@@ -1,6 +1,6 @@
 " Vim syntax file
 " Language:     KCL
-" Maintainer:   KusionStack
+" Maintainer:   KusionStack/kcl-lang
 
 if !exists("main_syntax")
   if version < 600
