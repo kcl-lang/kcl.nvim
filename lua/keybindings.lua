@@ -1,18 +1,3 @@
--- 去除字符串前空格
-local function trim(s)
-    return (s:gsub("^%s*(.-)%s*$", "%1"))
-end
-
--- 计算字符串前空格个数
-local function count_spaces_at_start(str)
-    local spaces = string.match(str, "^(%s*)")
-    if spaces then
-        return string.len(spaces)
-    else
-        return 0
-    end
-end
-
 -- 注释
 local function comment(s)
     return '# '..s
@@ -20,22 +5,23 @@ end
 
 -- 反注释
 local function uncomment(s)
-    return trim(s:gsub('#', '', 1))
+    return s:gsub('^#(%s*)', '', 1)
 end
 
-function switch_commented ()
+function toggle_line_comment ()
     local currentline = vim.api.nvim_get_current_line()
-    local space_len = count_spaces_at_start(currentline)
-
-    local currentstr = trim(currentline)
+    -- 匹配字符串前空格
+    local spaces = string.match(currentline, "^(%s*)")
+    -- 去除字符串前空格
+    local currentstr = currentline:gsub(spaces, '')
     if currentstr:sub(1,1) == '#' then
         -- 执行反注释
-        vim.api.nvim_set_current_line(string.rep(' ', space_len)..uncomment(currentstr))
+        vim.api.nvim_set_current_line(spaces..uncomment(currentstr))
     else
         -- 执行注释
-        vim.api.nvim_set_current_line(string.rep(' ', space_len)..comment(currentstr))
+        vim.api.nvim_set_current_line(spaces..comment(currentstr))
     end
 end
 
--- 切换注释
-vim.keymap.set("i", "<C-\\>", switch_commented)
+-- 切换行注释快捷键：Ctrl+\ 
+vim.keymap.set("i", "<C-\\>", toggle_line_comment)
