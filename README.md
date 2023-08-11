@@ -22,7 +22,8 @@ The extension will be installed in ``` ~/.local/share/nvim/site/pack/packer/star
 ### Commands
 **Insert mode:**
 ``Ctrl+\``  Toggle comment.
-**Normal mode :**
+
+**Normal mode:**
 ```zC```  Close all folds under the cursor recursively. 
 
 ```zO```  Open all folds under the cursor recursively. 
