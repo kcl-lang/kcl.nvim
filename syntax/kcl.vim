@@ -16,7 +16,7 @@ syntax match   kclNoise     /\%(:\|,\)/
 hi def link kclNoise			Noise
 
 " Module
-syn keyword    kclImport      import 
+syn keyword    kclImport      import as
 
 hi def link     kclImport     Include
 
@@ -30,15 +30,17 @@ hi def link     kclString              String
 " Keyword
 syn keyword     kclConditional            if else elif                         
 syn keyword     kclFor                    for in
-syn keyword     kclOperator               and or
+syn keyword     kclOperator               and or is not
 syn keyword     kclBoolean                True False
 syn keyword     kclAssert                 assert
+syn keyword     kclPrint                  print
 
 hi def link     kclConditional          Conditional
 hi def link     kclFor                  Repeat
 hi def link     kclOperator             Operator 
 hi def link     kclBoolean              Boolean
 hi def link     kclAssert               Conditional
+hi def link     kclPrint                Function
 
 " Number
 syn match   kclNumber   /\c\<\%(\d\+\%(e[+-]\=\d\+\)\=\|0b[01]\+\|0o\o\+\|0x\%(\x\|_\)\+\)n\=\>/
