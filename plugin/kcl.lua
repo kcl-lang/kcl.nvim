@@ -1,3 +1,3 @@
-require('lsp')
+require("lsp")
 require("keybindings")
 require("basic")
