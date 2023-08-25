@@ -1,6 +1,10 @@
 # vim-kcl
 Neovim KCL Extension
 
+
+![image](https://github.com/kcl-lang/vim-kcl/assets/462087/c5bcb1db-87a1-4ddb-ae7d-558f122a08e3)
+
+
 ## ⚡️ Requirements
 
 Install the [kcl-language-server](https://kcl-lang.io/docs/user_docs/getting-started/install) from the binary.
