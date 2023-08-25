@@ -7,12 +7,22 @@ Neovim KCL Extension
 
 ## ⚡️ Requirements
 
+### Manually:
+
 Install the [kcl-language-server](https://kcl-lang.io/docs/user_docs/getting-started/install) from the binary.
 
 > Don't forget to ensure it is in your `$PATH`
 ```
 export PATH=$PATH:{install-location}/kclvm/bin
 which kcl-language-server
+```
+
+### [mason.nvim](https://github.com/williamboman/mason.nvim):
+
+Simply call `:MasonInstall kcl` to install the `kcl-language-server`
+
+```
+:MasonInstall kcl
 ```
 
 ## 📦 Installation
