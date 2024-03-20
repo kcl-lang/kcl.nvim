@@ -3,6 +3,7 @@ Neovim KCL Extension
 
 
 ![image](https://github.com/kcl-lang/vim-kcl/assets/462087/c5bcb1db-87a1-4ddb-ae7d-558f122a08e3)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkcl-lang%2Fkcl.nvim.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkcl-lang%2Fkcl.nvim?ref=badge_shield)
 
 
 ## ⚡️ Requirements
@@ -95,3 +96,7 @@ return {
 ```zM```  Close all folds.
 
 ```zR```   Open all folds. 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkcl-lang%2Fkcl.nvim.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkcl-lang%2Fkcl.nvim?ref=badge_large)
