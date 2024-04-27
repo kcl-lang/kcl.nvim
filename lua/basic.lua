@@ -5,7 +5,6 @@ vim.filetype.add({
 	},
 })
 
---代码块折叠快捷键: zC-折叠 zO-展开 zM-全部折叠  zR-全部展开
 vim.api.nvim_command([[autocmd FileType kcl set nofoldenable]])
 vim.api.nvim_command([[autocmd FileType kcl set foldmethod=syntax]])
 
