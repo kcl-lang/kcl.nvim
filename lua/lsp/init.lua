@@ -71,9 +71,14 @@ function check_start_kcl_lsp()
 	end
 	-- Finally, attach to the buffer to track changes. This will do nothing if we
 	-- are already attached.
-	vim.lsp.buf_attach_client(bufnr, client_id)
+	local ok, err = pcall(vim.lsp.buf_attach_client, bufnr, client_id)
+	if ok then
+		vim.api.nvim_out_write("lsp init sucessed")
+	else
+		vim.api.nvim_out_write("lsp init failed: " ..err)
+	end
 end
 
-vim.api.nvim_command([[autocmd BufNewFile,BufRead * lua check_start_kcl_lsp()]])
+vim.api.nvim_command([[autocmd BufNewFile,BufRead *.k lua check_start_kcl_lsp()]])
 
 vim.cmd('lua check_start_kcl_lsp()')
