@@ -75,3 +75,5 @@ function check_start_kcl_lsp()
 end
 
 vim.api.nvim_command([[autocmd BufNewFile,BufRead * lua check_start_kcl_lsp()]])
+
+vim.cmd('lua check_start_kcl_lsp()')
