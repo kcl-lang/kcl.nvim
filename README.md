@@ -39,20 +39,8 @@ use 'kcl-lang/kcl.nvim'
 ### [folke/lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
-{ "kcl-lang/kcl.nvim" },
-```
-
-## ⚙️ Configuration
-
-> ❗️ You may want a more advanced configuration to ensure `*.k` files are bound to `ftiletype=kcl`
-
-For example (with the lazy plugin manager)
-```
 {
 	"kcl-lang/kcl.nvim",
-	init = function()
-		vim.api.nvim_command([[autocmd BufRead,BufNewFile *.k set filetype=kcl]])
-	end,
 	ft = {
 		"kcl",
 	},
