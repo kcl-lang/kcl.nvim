@@ -1,10 +1,3 @@
---- map .k file to filetype "kcl"
-vim.filetype.add({
-	extension = {
-		k = "kcl",
-	},
-})
-
 vim.api.nvim_command([[autocmd FileType kcl set nofoldenable]])
 vim.api.nvim_command([[autocmd FileType kcl set foldmethod=syntax]])
 
